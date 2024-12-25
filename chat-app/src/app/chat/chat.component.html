@@ -1,0 +1,6 @@
+<div *ngFor="let message of messages">
+    <strong>{{ message.sender }}</strong>: {{ message.message }}
+  </div>
+  <input [(ngModel)]="newMessage" placeholder="Votre message" />
+  <button (click)="sendMessage()">Envoyer</button>
+  

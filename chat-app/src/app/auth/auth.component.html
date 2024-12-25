@@ -1,0 +1,7 @@
+<form [formGroup]="authForm">
+    <input formControlName="email" placeholder="Email" />
+    <input formControlName="password" placeholder="Mot de passe" type="password" />
+    <button (click)="login()">Connexion</button>
+    <button (click)="register()">Inscription</button>
+  </form>
+  
