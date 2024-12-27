@@ -140,3 +140,36 @@ document.getElementById("send-btn").addEventListener("click", async () => {
         }
     }
 });
+
+// Gestion des émojis
+const emojiPicker = document.getElementById("emoji-picker");
+const emojiBtn = document.getElementById("emoji-btn");
+const messageInput = document.getElementById("message-input");
+
+// Liste d'émojis pour le picker
+const emojis = ["😀", "😂", "😍", "😭", "👍", "🎉", "❤️", "😎", "😡", "🙏", "🔥", "🥳", "💔", "🤔", "😢"];
+
+// Afficher/Masquer le sélecteur d'émojis
+emojiBtn.addEventListener("click", () => {
+    if (emojiPicker.style.display === "none" || !emojiPicker.style.display) {
+        emojiPicker.style.display = "block";
+        populateEmojiPicker();
+    } else {
+        emojiPicker.style.display = "none";
+    }
+});
+
+// Ajouter les émojis au picker
+function populateEmojiPicker() {
+    emojiPicker.innerHTML = ""; // Réinitialise les émojis
+    emojis.forEach((emoji) => {
+        const emojiButton = document.createElement("button");
+        emojiButton.textContent = emoji;
+        emojiButton.classList.add("emoji-btn");
+        emojiButton.addEventListener("click", () => {
+            messageInput.value += emoji;
+            emojiPicker.style.display = "none"; // Masque le picker après sélection
+        });
+        emojiPicker.appendChild(emojiButton);
+    });
+}

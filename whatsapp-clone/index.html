@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Clone</title>
+    <title>ChatZone</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Conteneur d'authentification -->
     <div id="auth-container">
-        <h1>WhatsApp Clone</h1>
+        <h1>ChatZone</h1>
         <input type="email" id="email" placeholder="Enter your email">
         <input type="password" id="password" placeholder="Enter your password">
         <div class="auth-buttons">
@@ -21,14 +21,22 @@
     <!-- Conteneur du chat -->
     <div id="chat-container" style="display: none;">
         <header>
-            <h1>Global Chat</h1>
+            <h1>ChatHub</h1>
             <button id="logout-btn">Logout</button>
         </header>
+        
+        <!-- Conteneur des messages -->
         <div id="messages" class="messages-container"></div>
+        
+        <!-- Footer avec champ de saisie, émojis et bouton d'envoi -->
         <footer>
+            <button id="emoji-btn">😊</button>
             <input type="text" id="message-input" placeholder="Type your message">
             <button id="send-btn">Send</button>
         </footer>
+        
+        <!-- Sélecteur d'émojis -->
+        <div id="emoji-picker"></div>
     </div>
 
     <script type="module" src="app.js"></script>
