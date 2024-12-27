@@ -1,224 +1,158 @@
 /* Corps général */
 body {
-    font-family: 'Poppins', sans-serif; /* Utilisation d'une police moderne */
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f3f8fb; /* Arrière-plan clair et moderne */
+    background: linear-gradient(135deg, #e3f2fd, #f1f8e9); /* Gradient pastel élégant */
+    animation: fadeIn 0.5s ease-in-out; /* Animation d'apparition */
 }
 
-/* Conteneur d'authentification */
-#auth-container {
-    text-align: center;
-    background-color: white;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Ombre douce pour donner de la profondeur */
-    width: 400px; /* Taille légèrement plus grande */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animation pour rendre l'interface plus dynamique */
+/* Animation de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-#auth-container:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-#auth-container h1 {
-    font-size: 32px; /* Taille de police augmentée */
-    margin-bottom: 20px;
-    color: #075e54;
-    font-weight: 600;
-    letter-spacing: 1px; /* Espacement des lettres pour un style moderne */
-}
-
-#auth-container input {
-    width: 100%;
-    padding: 14px; /* Plus de padding pour améliorer le confort visuel */
-    margin: 12px 0;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    font-size: 16px; /* Police plus grande pour la lisibilité */
-    background-color: #f9f9f9;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Animation pour les champs */
-}
-
-#auth-container input:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
-    outline: none;
-}
-.auth-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-    gap: 10px;
-}
-
-.auth-buttons button {
-    flex: 1;
-    padding: 14px 0;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre douce sur les boutons */
-}
-
-.auth-buttons button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-.auth-buttons button:active {
-    transform: scale(0.98);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Bouton spécifique à Sign Up */
-.auth-buttons #signup-btn {
-    background-color: #28a745;
-}
-
-.auth-buttons #signup-btn:hover {
-    background-color: #1e7c33;
-}
-
-.auth-buttons #signup-btn:active {
-    background-color: #165e27;
-}
 /* Conteneur de chat */
 #chat-container {
-    width: 90%; /* Occupation maximale de la largeur */
-    height: 90vh; /* Occupation maximale de la hauteur */
+    width: 90%;
+    height: 85vh;
     margin: auto;
     display: flex;
     flex-direction: column;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+#chat-container:hover {
+    transform: scale(1.01);
+}
+
+/* Header */
 header {
-    background-color: #075e54;
+    background: linear-gradient(135deg, #075e54, #054c44);
     color: white;
-    padding: 15px;
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
+    border-top-left-radius: 16px; /* Coins arrondis en haut à gauche */
+    border-top-right-radius: 16px; /* Coins arrondis en haut à droite */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+header h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espace entre le texte et l'icône */
+    font-size: 28px; /* Texte plus grand */
+    letter-spacing: 1px; /* Espacement des lettres */
 }
 
+header h1::before {
+    content: "💬"; /* Icône emoji représentant un chat */
+    font-size: 30px; /* Taille de l'icône */
+}
+
+
 header button {
-    background-color: #dc3545;
+    background: linear-gradient(135deg, #f44336, #d32f2f); /* Gradient moderne */
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 12px;
     font-size: 14px;
-    transition: background-color 0.3s;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header button:hover {
-    background-color: #a71d2a;
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    transform: scale(1.1); /* Agrandir légèrement au survol */
+}
+header button:active {
+    transform: scale(0.98); /* Rétrécir légèrement lors du clic */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Zone des messages */
+/* Messages */
 .messages-container {
     flex-grow: 1;
-    padding: 15px;
+    padding: 20px;
     overflow-y: auto;
-    background-color: #f9f9f9;
+    background: #f7fafc;
     border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
 }
 
 .message {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
-    gap: 10px;
+    gap: 15px;
+    animation: bounceIn 0.3s ease-in-out; /* Animation des messages */
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .message.sent {
     justify-content: flex-end;
 }
+
 .message.received {
     justify-content: flex-start;
 }
 
 /* Bulles de message */
 .message-bubble {
-    max-width: 60%; /* Réduit légèrement pour une meilleure lisibilité */
-    padding: 12px 15px;
-    border-radius: 18px;
-    font-size: 14px;
+    max-width: 60%;
+    padding: 14px;
+    border-radius: 20px;
+    font-size: 16px;
     line-height: 1.5;
     word-wrap: break-word;
-    background-color: #dcf8c6;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd;
+    background: linear-gradient(135deg, #dff8e1, #c9f2d2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #d4edda;
+    transition: transform 0.2s ease;
+}
+
+.message-bubble:hover {
+    transform: scale(1.02);
 }
 
 .message.received .message-bubble {
-    background-color: #ffffff;
-    border-color: #e0e0e0;
-}
-
-/* Zone de saisie */
-footer {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    background-color: #eee;
-    border-top: 1px solid #ddd;
-    position: relative; /* Nécessaire pour le positionnement du picker */
-}
-
-footer input {
-    flex-grow: 1;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 14px;
-    margin-right: 10px;
-}
-
-footer button {
-    padding: 12px 20px;
-    background-color: #075e54;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
-}
-
-footer button:hover {
-    background-color: #054c44;
-}
-
-#emoji-btn {
-    font-size: 24px;
-    margin-right: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
+    background: linear-gradient(135deg, #ffffff, #f5f5f5);
 }
 
 /* Avatar */
 .avatar {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     background-color: #25d366;
     color: white;
     font-size: 20px;
@@ -230,16 +164,62 @@ footer button:hover {
     text-transform: uppercase;
     margin-right: 10px;
     flex-shrink: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Sélecteur d'émojis */
+/* Zone de saisie */
+footer {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #f0f4f8;
+    border-top: 1px solid #ddd;
+    position: relative;
+}
+
+footer input {
+    flex-grow: 1;
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+footer input:focus {
+    border-color: #075e54;
+    box-shadow: 0 0 10px rgba(7, 94, 84, 0.3);
+}
+
+footer button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: linear-gradient(90deg, #25d366, #20bf55);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer button:hover {
+    background: linear-gradient(90deg, #1eae4a, #199948);
+    transform: scale(1.1);
+}
+
+/* Emoji Picker */
 #emoji-picker {
     position: absolute;
     bottom: 70px;
     left: 20px;
     z-index: 10;
     display: none;
-    background: #fff;
+    background: #ffffff;
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
