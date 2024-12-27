@@ -1,37 +1,191 @@
+/* Corps général */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #eaeff1; /* Couleur plus douce pour l'arrière-plan */
+}
+
+/* Conteneur d'authentification */
+#auth-container {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+#auth-container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #075e54;
+}
+
+#auth-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.auth-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.auth-buttons button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* Conteneur de chat */
+#chat-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 600px; /* Augmente la largeur */
+    height: 700px; /* Augmente la hauteur */
+    overflow: hidden;
 }
 
-#auth-container, #chat-container {
-    width: 300px;
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-input, button {
-    width: 100%;
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-button {
-    background-color: #4CAF50;
+header {
+    background-color: #075e54;
     color: white;
-    cursor: pointer;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-button:hover {
-    background-color: #45a049;
+header button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+header button:hover {
+    background-color: #a71d2a;
+}
+
+/* Zone des messages */
+.messages-container {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.message.sent {
+    justify-content: flex-end;
+}
+.message.received {
+    justify-content: flex-start;
+}
+
+/* Bulles de message */
+.message-bubble {
+    max-width: 70%;
+    padding: 12px 15px;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    background-color: #dcf8c6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+.message.received .message-bubble {
+    background-color: #ffffff;
+    border-color: #e0e0e0;
+}
+/* Zone de saisie */
+footer {
+    display: flex;
+    padding: 15px;
+    background-color: #eee;
+    border-top: 1px solid #ddd;
+}
+
+footer input {
+    flex-grow: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+footer button {
+    padding: 12px 20px;
+    background-color: #075e54;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+footer button:hover {
+    background-color: #054c44;
+}
+.avatar {
+    width: 45px;
+    height: 45px;
+    background-color: #25d366; /* Couleur par défaut remplacée dynamiquement */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    margin-right: 10px;
+    flex-shrink: 0; /* Garde une taille fixe */
+}
+
+
+.message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px; /* Espacement entre l'avatar et la bulle */
 }
