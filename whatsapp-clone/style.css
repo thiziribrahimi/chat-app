@@ -1,13 +1,13 @@
 /* Corps général */
 body {
-    font-family: 'Poppins', sans-serif; /* Utilisation d'une police moderne */
+    font-family: 'Poppins', sans-serif; 
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #e6f5e9, #d4f1dc); /* Dégradé doux */
+    background: linear-gradient(135deg, #e6f5e9, #d4f1dc); 
     background-size: 200% 200%;
     animation: gradientAnimation 6s ease infinite;
 }
@@ -24,9 +24,9 @@ body {
     background-color: white;
     padding: 40px;
     border-radius: 16px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Ombre douce pour donner de la profondeur */
-    width: 400px; /* Taille légèrement plus grande */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animation pour rendre l'interface plus dynamique */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+    width: 400px; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
 }
 
 #auth-container:hover {
@@ -35,22 +35,22 @@ body {
 }
 
 #auth-container h1 {
-    font-size: 32px; /* Taille de police augmentée */
+    font-size: 32px;
     margin-bottom: 20px;
     color: #075e54;
     font-weight: 600;
-    letter-spacing: 1px; /* Espacement des lettres pour un style moderne */
+    letter-spacing: 1px; 
 }
 
 #auth-container input {
     width: 100%;
-    padding: 14px; /* Plus de padding pour améliorer le confort visuel */
+    padding: 14px; 
     margin: 12px 0;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
-    font-size: 16px; /* Police plus grande pour la lisibilité */
+    font-size: 16px; 
     background-color: #f9f9f9;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Animation pour les champs */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; 
 }
 
 #auth-container input:focus {
@@ -76,7 +76,7 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre douce sur les boutons */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .auth-buttons button:hover {
@@ -122,8 +122,8 @@ header {
     align-items: center;
     font-size: 24px;
     font-weight: bold;
-    border-radius: 16px 16px 0 0; /* Coins arrondis uniquement en haut */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour donner de la profondeur */
+    border-radius: 16px 16px 0 0; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     position: relative;
 }
 header h1 {
@@ -135,7 +135,7 @@ header h1 {
     font-weight: 700;
 }
 header h1::before {
-    content: "💬"; /* Remplacez par une icône pertinente */
+    content: "💬"; 
     font-size: 28px;
     color: #ffffff;
 }

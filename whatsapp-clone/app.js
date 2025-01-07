@@ -147,14 +147,14 @@ emojiBtn.addEventListener("click", () => {
 
 // Ajouter les émojis au picker
 function populateEmojiPicker() {
-    emojiPicker.innerHTML = ""; // Réinitialise les émojis
+    emojiPicker.innerHTML = ""; 
     emojis.forEach((emoji) => {
         const emojiButton = document.createElement("button");
         emojiButton.textContent = emoji;
         emojiButton.classList.add("emoji-btn");
         emojiButton.addEventListener("click", () => {
             messageInput.value += emoji;
-            emojiPicker.style.display = "none"; // Masque le picker après sélection
+            emojiPicker.style.display = "none"; 
         });
         emojiPicker.appendChild(emojiButton);
     });
